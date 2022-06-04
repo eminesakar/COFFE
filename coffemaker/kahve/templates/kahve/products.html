@@ -1,0 +1,24 @@
+{% extends 'kahve/base.html' %}
+{% load static %}
+{% block content %}
+{% for kahve in kahveler %}
+<section class="page-section">
+            <div class="container">
+                <div class="product-item">
+                    <div class="product-item-title d-flex">
+                        <div class="bg-faded p-5 d-flex ms-auto rounded">
+                            <h2 class="section-heading mb-0">
+                                <span class="section-heading-upper">Kahve</span>
+                                <span class="section-heading-lower">{{ kahve.ad }}</span>
+                            </h2>
+                        </div>
+                    </div>
+                    <img class="product-item-img mx-auto d-flex rounded img-fluid mb-3 mb-lg-0" src="{{ kahve.fotograf.url }}" alt="..." />
+                    <div class="product-item-description d-flex me-auto">
+                        <div class="bg-faded p-5 rounded"><p class="mb-0">{{ kahve.aciklama }}</p></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+{% endfor %}
+{% endblock %}
